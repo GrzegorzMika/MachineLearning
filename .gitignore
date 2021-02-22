@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*.ipynb
+*.csv
+*/*.csv
+*/logs/
+*.ipynb_checkpoints/
+*.parquet
+*/*.parquet
+/Text/aclImdb_v1.tar.gz.tar.gz
+/Text/aclImdb/
+/StackText/stack_overflow_16k.tar.gz
+/StackText/stack_overflow_16k/
+
+/.idea
