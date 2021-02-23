@@ -140,3 +140,8 @@ dmypy.json
 /StackText/stack_overflow_16k/
 
 /.idea
+/SaveAndLoad/checkpoints/
+/SaveAndLoad/saved_model/
+/SaveAndLoad/training_1/
+/SaveAndLoad/training_2/
+/KerasTuner/my_dir/
