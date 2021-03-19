@@ -145,3 +145,7 @@ dmypy.json
 /SaveAndLoad/training_1/
 /SaveAndLoad/training_2/
 /KerasTuner/my_dir/
+/TFTutorials/Text/aclImdb/
+/TFTutorials/Text/aclImdb_v1.tar.gz.tar.gz
+/TFTutorials/StackText/stack_overflow_16k/
+/TFTutorials/StackText/stack_overflow_16k.tar.gz
