@@ -10,6 +10,7 @@ dependencies:
   - joblib==1.0.0
   - scipy==1.6.0
   - threadpoolctl==2.0.0
+  - pydub==0.25.1
   - pip:
       - textstat==0.7.0
       - lexicalrichness==0.1.3
