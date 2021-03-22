@@ -157,11 +157,11 @@ def get_speech_samples(gender, subset, number_of_samples, paths):
         raise ValueError('Unknown gender!')
 
 
-def generate_sample(subset, output_path, filename, length=60.0, simultan=True):
+def generate_sample(subset, output_path, filename, paths, length=60.0, simultan=True):
     base_sound = AudioSegment.silent(duration=length * 1000)
 
     gender = random.choice(['M', 'F'])
-    speeches = get_speech_samples(gender=gender, subset=subset, number_of_samples=random.randint(6, 10))
+    speeches = get_speech_samples(gender=gender, subset=subset, number_of_samples=random.randint(6, 10), paths=paths)
     simultaneous = random.getrandbits(1) if simultan else 0
 
     output = generate_speech_overlay(base_sound=base_sound, speech_list=speeches, simultaneous=simultaneous)
@@ -225,20 +225,20 @@ if __name__ == '__main__':
     samples_dict = {}
     for i in tqdm(range(1, args['train_samples'] + 1)):
         out_name, label = generate_sample(subset="train", output_path=args['output_path'], filename=str(i),
-                                          length=args['length'], simultan=args['simultan'])
+                                          length=args['length'], simultan=args['simultan'], paths=paths)
         samples_dict[out_name] = 0 if label == "male" else 1
     gen_csv(data_dict=samples_dict, outpath=args['csv_dir'], outname=args['csv_flag'] + "train.csv")
 
     samples_dict = {}
     for i in tqdm(range(1, args['test_samples'] + 1)):
         out_name, label = generate_sample(subset="test", output_path=args['output_path'], filename=str(i),
-                                          length=args['length'], simultan=args['simultan'])
+                                          length=args['length'], simultan=args['simultan'], paths=paths)
         samples_dict[out_name] = 0 if label == "male" else 1
     gen_csv(data_dict=samples_dict, outpath=args['csv_dir'], outname=args['csv_flag'] + "test.csv")
 
     samples_dict = {}
     for i in tqdm(range(1, args['validation_samples'] + 1)):
         out_name, label = generate_sample(subset="valid", output_path=args['output_path'], filename=str(i),
-                                          length=args['length'], simultan=args['simultan'])
+                                          length=args['length'], simultan=args['simultan'], paths=paths)
         samples_dict[out_name] = 0 if label == "male" else 1
     gen_csv(data_dict=samples_dict, outpath=args['csv_dir'], outname=args['csv_flag'] + "valid.csv")
