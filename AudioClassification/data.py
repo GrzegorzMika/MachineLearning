@@ -30,9 +30,9 @@ def create_output_paths(output_path, mixed=False):
     Path(os.path.join(output_path, "valid/female/")).mkdir(parents=True, exist_ok=True)
 
     if mixed:
-        Path(output_path + "train/mixed/").mkdir(parents=True, exist_ok=True)
-        Path(output_path + "test/mixed/").mkdir(parents=True, exist_ok=True)
-        Path(output_path + "valid/mixed/").mkdir(parents=True, exist_ok=True)
+        Path(os.path.join(output_path, "train/mixed/")).mkdir(parents=True, exist_ok=True)
+        Path(os.path.join(output_path, "test/mixed/")).mkdir(parents=True, exist_ok=True)
+        Path(os.path.join(output_path, "valid/mixed/")).mkdir(parents=True, exist_ok=True)
 
 
 def build_speech_lists(dirs):
@@ -177,7 +177,7 @@ def generate_sample(subset, output_path, filename, paths, length=60.0, simultan=
 
 
 def gen_csv(data_dict, outpath, outname):
-    with open(outpath + outname, 'w') as csvfile:
+    with open(os.path.join(outpath, outname), 'w') as csvfile:
         filewriter = csv.writer(csvfile, delimiter=',')
         filewriter.writerow(['path', 'label'])
         filewriter.writerows(data_dict.items())
