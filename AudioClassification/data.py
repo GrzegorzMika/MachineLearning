@@ -20,14 +20,14 @@ file_name = os.environ['UNTAR_FILE']
 
 
 def create_output_paths(output_path, mixed=False):
-    Path(output_path + "train/male/").mkdir(parents=True, exist_ok=True)
-    Path(output_path + "train/female/").mkdir(parents=True, exist_ok=True)
+    Path(os.path.join(output_path, "train/male/")).mkdir(parents=True, exist_ok=True)
+    Path(os.path.join(output_path, "train/female/")).mkdir(parents=True, exist_ok=True)
 
-    Path(output_path + "test/male/").mkdir(parents=True, exist_ok=True)
-    Path(output_path + "test/female/").mkdir(parents=True, exist_ok=True)
+    Path(os.path.join(output_path, "test/male/")).mkdir(parents=True, exist_ok=True)
+    Path(os.path.join(output_path, "test/female/")).mkdir(parents=True, exist_ok=True)
 
-    Path(output_path + "valid/male/").mkdir(parents=True, exist_ok=True)
-    Path(output_path + "valid/female/").mkdir(parents=True, exist_ok=True)
+    Path(os.path.join(output_path, "valid/male/")).mkdir(parents=True, exist_ok=True)
+    Path(os.path.join(output_path, "valid/female/")).mkdir(parents=True, exist_ok=True)
 
     if mixed:
         Path(output_path + "train/mixed/").mkdir(parents=True, exist_ok=True)
