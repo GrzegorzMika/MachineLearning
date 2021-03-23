@@ -136,12 +136,12 @@ def main(args):
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--output_path', dest='output_path', default=os.path.join(target_location, 'dataset'),
                     help='Base path for the dataset')
-parser.add_argument('--train_list', dest='train_list', default=os.path.join(target_location, 'custom_train.csv'),
+parser.add_argument('--train_list', dest='train_list', default=os.path.join(target_location, 'dataset', 'custom_train.csv'),
                     help="CSV file that stores the training files")
 parser.add_argument('--validation_list', dest='validation_list',
-                    default=os.path.join(target_location, 'custom_valid.csv'),
+                    default=os.path.join(target_location, 'dataset', 'custom_valid.csv'),
                     help="CSV file that stores the validation files")
-parser.add_argument('--test_list', dest='test_list', default=os.path.join(target_location, 'custom_test.csv'),
+parser.add_argument('--test_list', dest='test_list', default=os.path.join(target_location, 'dataset', 'custom_test.csv'),
                     help="CSV file that stores the test files")
 parser.add_argument('--files_per_train_shard', dest='train_max', type=int, default=50,
                     help='Number of files for the TFRecord file')
