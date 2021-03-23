@@ -188,7 +188,7 @@ parser.add_argument('--output_path', dest='output_path', default=os.path.join(ta
                     help='Base path for the dataset')
 parser.add_argument('--speaker_file', dest='speaker_file', default=os.path.join(target_location, 'speaker.pkl'),
                     help='Pickle file that stores the speakers')
-parser.add_argument('--seed', dest='seed', type=int, default=42, help='Seed for reproducability')
+parser.add_argument('--seed', dest='seed', type=int, default=42, help='Seed for reproducibility')
 parser.add_argument('--num_train_samples', dest='train_samples', type=int, default=80,
                     help='Number of samples in the training subset')
 parser.add_argument('--num_test_samples', dest='test_samples', type=int, default=10,

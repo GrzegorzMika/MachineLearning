@@ -159,6 +159,7 @@ parser.add_argument('--num_test_monitor', dest='test_monitor', type=int, default
                     help='Number of test samples to store in a numpy array to observe live training statistics on')
 parser.add_argument('--num_valid_monitor', dest='valid_monitor', type=int, default=25,
                     help='Number of valid samples to store in a numpy array to observe live training statistics on')
+parser.add_argument('--seed', dest='seed', type=int, default=42, help='Seed for reproducibility')
 
 args, unknown = parser.parse_known_args()
 args = args.__dict__
