@@ -114,7 +114,7 @@ def generate_monitoring_sample(tfr_dir, csv_path, output_name, number_of_samples
 
 
 def main(args):
-    tfr_dir = args['output_path']
+    tfr_dir = os.path.join(args['output_path'], 'dataset')
     Path(tfr_dir).mkdir(parents=True, exist_ok=True)
 
     gen_tfr(tfr_dir=tfr_dir, csv_path=args['test_list'], output_name="test", max_files=args['test_max'],
