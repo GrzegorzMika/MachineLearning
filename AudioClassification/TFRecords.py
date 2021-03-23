@@ -114,7 +114,7 @@ def generate_monitoring_sample(tfr_dir, csv_path, output_name, number_of_samples
 
 
 def main(args):
-    tfr_dir = os.path.join(args['output_path'], 'dataset')
+    tfr_dir = args['output_path']
     Path(tfr_dir).mkdir(parents=True, exist_ok=True)
 
     gen_tfr(tfr_dir=tfr_dir, csv_path=args['test_list'], output_name="test", max_files=args['test_max'],
@@ -134,7 +134,7 @@ def main(args):
 
 
 parser = argparse.ArgumentParser(description='')
-parser.add_argument('--output_path', dest='output_path', default=os.path.join(target_location, 'dataset', 'tfr_dir'),
+parser.add_argument('--output_path', dest='output_path', default=os.path.join(target_location, 'dataset'),
                     help='Base path for the dataset')
 parser.add_argument('--train_list', dest='train_list', default=os.path.join(target_location, 'custom_train.csv'),
                     help="CSV file that stores the training files")
