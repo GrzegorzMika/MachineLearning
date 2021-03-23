@@ -195,7 +195,7 @@ parser.add_argument('--num_test_samples', dest='test_samples', type=int, default
                     help='Number of samples in the test subset')
 parser.add_argument('--num_valid_samples', dest='validation_samples', type=int, default=10,
                     help='Number of samples in the validation subset')
-parser.add_argument('--csv_dir', dest='csv_dir', default=target_location,
+parser.add_argument('--csv_dir', dest='csv_dir', default=os.path.join(target_location, 'dataset'),
                     help='The csv files that contain sample|label mappings are stored there')
 parser.add_argument('--csv_flag', dest='csv_flag', default='custom_',
                     help='A name that will be appended to the csv file to differentiate it from other ones')
